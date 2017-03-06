@@ -1,0 +1,105 @@
+<html>
+<head>
+<style>
+
+body {
+    background-color: black;
+    color: #CCCCCC;
+}
+
+span {
+    font-size: 1.5em;
+}
+
+b {
+    display:block;
+    font-size: 1.5em;
+    margin-top:1em;
+}
+
+code  { 
+    font-size: 1.8em;
+    margin-left: 1em;
+}
+
+a {
+    font-size: 1.3em;
+    margin-left: 1em;
+    color: #929242
+}
+
+h1 {
+
+    color: #aaaaaa;
+
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-bottom:2em;
+    padding: 0;
+}
+
+</style>
+
+<script>
+    function httpGetAsync(theUrl)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+        xmlHttp.send(null);
+        location.reload(); // lazy to do it properly, just reload the page to get the status
+    }
+</script>
+</head>
+
+<body>
+
+<h1> Marantz NR1603 </h1>
+
+<p>
+    <span>STATUS</span> <code> {{status}} </code>
+</p>
+
+<hr/>
+
+<p>
+    <b>SOURCE:</b><br/>
+<a href="#" onclick="httpGetAsync('/command?cmd=SI&arg=CD')"> CD </a>
+<a href="#" onclick="httpGetAsync('/command?cmd=SI&arg=MPLAY')">MEDIA PLAYER</a>
+<a href="#" onclick="httpGetAsync('/command?cmd=SI&arg=IRADIO')">INTERNET RADIO</a>
+</p>
+
+    <b>VOLUME:</b><br/>
+<a href = "#" onclick="httpGetAsync('/command?cmd=MV&arg=UP')">UP</a>
+<a href = "#" onclick="httpGetAsync('/command?cmd=MV&arg=DOWN')">DOWN</a><br/>
+<p>
+<a href = "#" onclick="httpGetAsync('/command?cmd=MV&arg=85')">85</a>
+<a href = "#" onclick="httpGetAsync('/command?cmd=MV&arg=80')">80</a>
+<a href = "#" onclick="httpGetAsync('/command?cmd=MV&arg=75')">75</a>
+<a href = "#" onclick="httpGetAsync('/command?cmd=MV&arg=70')">70</a>
+<a href = "#" onclick="httpGetAsync('/command?cmd=MV&arg=65')">65</a> 
+<a href = "#" onclick="httpGetAsync('/command?cmd=MV&arg=60')">60</a> 
+<a href = "#" onclick="httpGetAsync('/command?cmd=MV&arg=55')">55</a> 
+<a href = "#" onclick="httpGetAsync('/command?cmd=MV&arg=50')">50</a> 
+</p>
+</p>
+<p>
+<p>
+
+<hr style="margin-top:5em"/>
+
+<p>
+<span>MUTE:</span> <a href = "#" onclick="httpGetAsync('/command?cmd=MU&arg=ON')">ON</a> <a href = "#" onclick="httpGetAsync('/command?cmd=MU&arg=OFF')">OFF</a>
+</p>
+
+<span>POWER:</span>
+<a href = "#" onclick="httpGetAsync('/command?cmd=PW&arg=ON')">ON</a>
+<a href = "#" onclick="httpGetAsync('/command?cmd=PW&arg=STANDBY')">STANDBY</a>
+</p>
+
+</body>
+</html>

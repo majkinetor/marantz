@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export MARANTZ_IP=192.168.2.167
+DIR=`dirname $0`
+$DIR/marantz.py
