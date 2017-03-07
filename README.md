@@ -6,7 +6,7 @@ Very simple marantz web controler
 
 Requires:
 - python3
-- flask: `pip flask`
+- flask: `pip install flask`
 
 Edit the marantz shell script and set the IP address of the receiver. Then run it, it will self host python flask application with simple interface that can be customized quickly.
 
