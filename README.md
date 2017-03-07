@@ -1,6 +1,6 @@
 # marantz
 
-Very simple marantz web controler
+Very simple marantz receiver web controler. Should support any marantz model that follows telnet interface in the PROTOCOL pdf.
 
 ## Install
 
